@@ -1,0 +1,25 @@
+<link rel="import" href="packages://ui-kit/widget/index.html">
+
+<dom-module id="quick-browse">
+    <link rel="import" type="css" href="quick-browse.css">
+    <template>
+        <editor-toolbar>
+            <editor-input class="flex-1" placeholder="Search... (RegExp)" input-value="{{filterText}}"></editor-input>
+            <i class="fa fa-search"></i>
+        </editor-toolbar>
+        <div class="view flex-1" id="view">
+            <ul id="items">
+                <template is="dom-repeat" items="{{applyFilter(assetsList,filterText)}}">
+                    <li on-click="_onItemClick" on-dblclick="_onDblClick" uuid$="[[item.uuid]]">
+                        <div class="layout center horizontal">
+                            <img class="thumb" src$="[[item.thumb]]"/>
+                            <span>[[item.name]]</span><span>[[item.extname]]</span>
+                        </div>
+                        <div class="type">[<span>[[item.type]]</span>]</div>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </template>
+</dom-module>
+<script type="text/javascript" src="quick-browse.js"></script>

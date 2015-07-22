@@ -1,0 +1,26 @@
+{
+  "name": "quick-browse",
+  "version": "0.0.1",
+  "description": "quick-browse for Fireball",
+  "author": "Firebox Technology",
+  "hosts": {
+      "editor-framework": "^0.3.10"
+  },
+  "main": "main.js",
+  "menus": {
+    "Developer/Quick-Browse": {
+      "message": "quick-browse:open"
+    }
+  },
+  "panels": {
+    "panel": {
+      "frame": "panel/quick-browse.html",
+      "type": "float",
+      "title": "quick-browse",
+      "width": 400,
+      "height": 500,
+      "messages": [
+      ]
+    }
+  }
+}
